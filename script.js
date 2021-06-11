@@ -7,7 +7,8 @@ window.addEventListener("DOMContentLoaded", getJson());
 
 // make http request to read json file from github account
 function getJson() {
-   makeRequest("https://indirasomavarapu.github.io/Portfolio/degrees.json");
+   makeRequest("https://indirasomavarapu.github.io/CollegeDegrees/degrees.json");
+   
 }
 
 // read json data by calling the url
