@@ -2,14 +2,12 @@
 JavaScript program to read Json data and show it as table
  */
 
-//  trigger getJson function upon event
-window.addEventListener("DOMContentLoaded", getJson());
+//  trigger getJson function upon button is clicked
+document.getElementById('degree').addEventListener('click', getJson);
 
-// make http request to read json file from github account
+// make http request to read json file from my github account
 function getJson() {
-
    makeRequest("https://indirasomavarapu.github.io/CollegeDegrees/degrees.json");
-
 }
 
 // read json data by calling the url
@@ -76,9 +74,7 @@ function populateTable(degrees) {
 
    // add data to table rows
    for (var i = 0; i < degrees.length; i++) {
-
       tr = table.insertRow(-1);
-
       for (var j = 0; j < col.length; j++) {
          var tabCell = tr.insertCell(-1);
          tabCell.innerHTML = degrees[i][col[j]];
@@ -89,5 +85,7 @@ function populateTable(degrees) {
    var tableContainer = document.getElementById("showJson");
    tableContainer.innerHTML = "";
    tableContainer.appendChild(table);
+   document.getElementById('degree').style.display = 'none';
+   
 }
 
